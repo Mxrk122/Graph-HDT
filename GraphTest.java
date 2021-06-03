@@ -16,7 +16,7 @@ public class GraphTest {
     }
 
     @Test
-    public void put() {
+    public void remove() {
         Graph grafo = new Graph(5);
         grafo.add(1, 1);
         grafo.remove(1, 1);

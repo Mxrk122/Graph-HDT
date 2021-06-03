@@ -27,7 +27,7 @@ public class Graph {
             matrix[i][j] -= 1;
     }
 
-    // Metodo agregado por mi
+    // Metodo creado por mi
     public void modify(int i, int j, int value){
         matrix[i][j] = value;
     }

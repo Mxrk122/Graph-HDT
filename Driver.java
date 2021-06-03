@@ -117,7 +117,7 @@ public class Driver {
 
             }
 
-            if(opcion == 3){
+            if(opcion == 3){ // Se modificara la direccion solicitada
                 System.out.println("Ciudad a la que desea llegar, revise la nomenclatura");
                 System.out.println("solo puede ingresar numeros");
                 try{
