@@ -97,9 +97,46 @@ public class Driver {
             opcion = scan.nextInt();
 
             if(opcion == 1){
-                System.out.println("Ciudad a la que desea llegar");
+                System.out.println("Ciudad a la que desea llegar, cuide su ortografia");
+                try{
+                    System.out.println("Ingrese la ciudad");
+                    String ciudad = scan.nextLine();
+                    System.out.println("Ingrese el destino");
+                    String destino = scan.nextLine();
+
+                    int c = ciudades.indexOf(ciudad);
+                    int d = ciudades.indexOf(destino);
+
+                    System.out.println(grafo.get(c, d));
+
+                } catch(Exception e){
+                    System.out.println("Has ingresado una ciudad incorrecta");
+                }
             }
 
+            if(opcion == 2){
+
+            }
+
+            if(opcion == 3){
+                System.out.println("Cambiar informacion, cuide su ortografia");
+                try{
+                    System.out.println("Ingrese la ciudad");
+                    String ciudad = scan.nextLine();
+                    System.out.println("Ingrese el destino");
+                    String destino = scan.nextLine();
+                    System.out.println("Ingrese el nuevo valor");
+                    int value = scan.nextInt();
+
+                    int c = ciudades.indexOf(ciudad);
+                    int d = ciudades.indexOf(destino);
+
+                    grafo.modify(c, d, value);
+
+                } catch(Exception e){
+                    System.out.println("Has ingresado una ciudad incorrecta");
+                }
+            }
         }
     }
 }
