@@ -119,18 +119,20 @@ public class Driver {
             }
 
             if(opcion == 3){
-                System.out.println("Cambiar informacion, cuide su ortografia");
+                System.out.println("Cambiar informacion, cuide su ortografia\nIngresar ciudad");
                 try{
-                    System.out.println("Ingrese la ciudad");
-                    String ciudad = scan.nextLine();
+                    
+                    String ciudad;
+                    ciudad = scan.nextLine();
+
                     int c = ciudades.indexOf(ciudad);
 
 
-                    System.out.println("Ingrese el destino");
+                    System.out.println("Ingresar destino");
                     String destino = scan.nextLine();
                     int d = ciudades.indexOf(destino);
 
-                    
+
                     System.out.println("Ingrese el nuevo valor");
                     int value = scan.nextInt();
 
@@ -142,6 +144,8 @@ public class Driver {
                 } catch(Exception e){
                     System.out.println("Has ingresado una ciudad incorrecta");
                 }
+            } if(opcion == 4){
+                ciclo = 1;
             }
         }
     }
