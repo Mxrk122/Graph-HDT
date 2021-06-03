@@ -10,6 +10,7 @@ import java.io.IOException;
 // Driver Code
 public class Driver {
     public static void main(String[] args) throws IOException {
+        Scanner scan = new Scanner(System.in);
 
         // Listas en las que almacenaremos las ciudades 
         // Esta parte del codigo es para llenar el array
@@ -86,7 +87,19 @@ public class Driver {
         // Menu
         int ciclo = 0;
         while(ciclo == 0){
-            
+            int opcion = 0;
+            System.out.println("Menu de opciones");
+            System.out.println("1. Ruta mas corta de una ciudad a otra");
+            System.out.println("2. Centro del grafo");
+            System.out.println("3. Modificar la distancia de una ciudad a otra");
+            System.out.println("4. Salir");
+
+            opcion = scan.nextInt();
+
+            if(opcion == 1){
+                System.out.println("Ciudad a la que desea llegar");
+            }
+
         }
     }
 }
