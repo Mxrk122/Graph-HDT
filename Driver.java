@@ -82,32 +82,31 @@ public class Driver {
             System.out.println("No se ha podido abrir el archivo de texto");
         }
 
-        grafo.showMatrix();
-
         // Menu
         int ciclo = 0;
         while(ciclo == 0){
+            grafo.showMatrix();
             int opcion = 0;
             System.out.println("Menu de opciones");
             System.out.println("1. Ruta mas corta de una ciudad a otra");
             System.out.println("2. Centro del grafo");
             System.out.println("3. Modificar la distancia de una ciudad a otra");
-            System.out.println("4. Salir");
+            System.out.println("4. Ver nomenclatura");
+            System.out.println("5. salir");
 
             opcion = scan.nextInt();
 
             if(opcion == 1){
-                System.out.println("Ciudad a la que desea llegar, cuide su ortografia");
+                System.out.println("Ciudad a la que desea llegar, revise la nomenclatura");
+                System.out.println("solo puede ingresar numeros");
                 try{
                     System.out.println("Ingrese la ciudad");
-                    String ciudad = scan.nextLine();
+                    int ciudad = scan.nextInt();
+
                     System.out.println("Ingrese el destino");
-                    String destino = scan.nextLine();
+                    int destino = scan.nextInt();
 
-                    int c = ciudades.indexOf(ciudad);
-                    int d = ciudades.indexOf(destino);
-
-                    System.out.println(grafo.get(c, d));
+                    System.out.println(grafo.get(ciudad, destino));
 
                 } catch(Exception e){
                     System.out.println("Has ingresado una ciudad incorrecta");
@@ -119,18 +118,15 @@ public class Driver {
             }
 
             if(opcion == 3){
-                System.out.println("Cambiar informacion, cuide su ortografia\nIngresar ciudad");
+                System.out.println("Ciudad a la que desea llegar, revise la nomenclatura");
+                System.out.println("solo puede ingresar numeros");
                 try{
                     
-                    String ciudad;
-                    ciudad = scan.nextLine();
+                    System.out.println("Ingrese la ciudad");
+                    int ciudad = scan.nextInt();
 
-                    int c = ciudades.indexOf(ciudad);
-
-
-                    System.out.println("Ingresar destino");
-                    String destino = scan.nextLine();
-                    int d = ciudades.indexOf(destino);
+                    System.out.println("Ingrese el destino");
+                    int destino = scan.nextInt();
 
 
                     System.out.println("Ingrese el nuevo valor");
@@ -139,12 +135,18 @@ public class Driver {
                     
                     
 
-                    grafo.modify(c, d, value);
+                    grafo.modify(ciudad, destino, value);
 
                 } catch(Exception e){
                     System.out.println("Has ingresado una ciudad incorrecta");
                 }
             } if(opcion == 4){
+                // Mostrar nomenclatura}
+                System.out.println("nomenclatura para la matriz");
+                for (String ciudad : ciudades) {
+                    System.out.println(ciudad + " " + ciudades.indexOf(ciudad));
+                }
+            } if(opcion == 5){
                 ciclo = 1;
             }
         }
