@@ -123,13 +123,19 @@ public class Driver {
                 try{
                     System.out.println("Ingrese la ciudad");
                     String ciudad = scan.nextLine();
+                    int c = ciudades.indexOf(ciudad);
+
+
                     System.out.println("Ingrese el destino");
                     String destino = scan.nextLine();
+                    int d = ciudades.indexOf(destino);
+
+                    
                     System.out.println("Ingrese el nuevo valor");
                     int value = scan.nextInt();
 
-                    int c = ciudades.indexOf(ciudad);
-                    int d = ciudades.indexOf(destino);
+                    
+                    
 
                     grafo.modify(c, d, value);
 
